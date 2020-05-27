@@ -1,0 +1,25 @@
+.pet {
+    &__title {
+        color: #53D769;
+        text-align: center;
+        font-size: 28px;
+        line-height: 1.25;
+        margin: 0;
+        text-transform: uppercase;
+        text-shadow: 0 2px 1px #338333;
+
+        &::before,
+        &::after {
+            content: ' ~ '
+        }
+    }
+
+    &__type {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 16px auto 0 auto;
+        font-size: 48px;
+        line-height: 1;
+    }
+}

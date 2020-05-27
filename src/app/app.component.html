@@ -1,0 +1,20 @@
+<div class="app">
+    <!-- heading for accessibility -->
+    <h1 class="visually-hidden">Feline Demo</h1>
+
+    <!-- loading messages -->
+    <div class="app__loading-msg" *ngIf=!isOwnerDataLoaded>
+        <span *ngIf=!isOwnerDataLoadError>Loading pet owners...</span>
+        <span *ngIf=isOwnerDataLoadError>Error loading pet owners :(</span>
+    </div>
+
+    <!-- section heading for accessibility -->
+    <h2 class="visually-hidden">Lists of pets</h2>
+
+    <!-- owner category: container component for categorised owners' pets -->
+    <app-owner-category [owners]="owners" [genderCategory]="'male'"></app-owner-category>
+    <app-owner-category [owners]="owners" [genderCategory]="'female'"></app-owner-category>
+
+    <!-- for accessibility screen reader announcements -->
+    <div class="visually-hidden" aria-live="polite" [innerHTML]=announcementContent></div>
+</div>

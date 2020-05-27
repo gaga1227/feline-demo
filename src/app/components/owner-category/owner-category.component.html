@@ -1,0 +1,19 @@
+<div class="owner-category" [attr.data-gender]=targetGender.toString().toLowerCase()>
+    <h3 class="owner-category__title">
+        <span [innerHTML]=targetGender.toString().toLowerCase()></span>
+        <span class="visually-hidden"> owners' pets</span>
+    </h3>
+
+    <!-- loading success: show owners feline list -->
+    <ol class="owner-category__list list--unstyled">
+
+        <!-- owner felines -->
+        <li *ngFor="let pet of targetOwnersPets | filterPets: 'cat'; let i = index"
+            class="owner-category__item"
+            id="{{targetGender.toString().toLocaleLowerCase()}}-gender-owners-pet-{{i + 1}}">
+
+            <!-- render pet component -->
+            <app-pet [pet]="pet"></app-pet>
+        </li>
+    </ol>
+</div>
